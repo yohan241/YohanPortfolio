@@ -115,6 +115,14 @@ function startUp(){
   bg.classList.remove("invisible");
   gsb.classList.remove("huge");
   gsb.classList.add("normal");
+  const vignette = document.getElementById("vignette-transition");
+
+
+  vignette.classList.add("expanded");
+
+
+  
+
   setTimeout(() => {
      gsb.classList.remove("normal");
   }, 300); 

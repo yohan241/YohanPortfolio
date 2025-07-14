@@ -26,7 +26,64 @@ html, body {
     font-weight: 200 ;
 }
 
+.vignette-mask {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(9, 1, 24, 0.95) 60%);
+  z-index: 9998;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1);
+  transition: transform 0.3s ease-out;
+  clip-path: circle(100vw at center); /* Small circle initially */
+  pointer-events: none;
+}
 
+.vignette-mask.expanded {
+  transform: scale(6);/* Big circle after click */
+  pointer-events: none;
+}
+
+.custom-shape-divider-top-1752518320 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1752518320 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 155px;
+}
+
+.custom-shape-divider-top-1752518320 .shape-fill {
+    fill: #09061D;
+}
+.custom-shape-divider-bottom-1752518585 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1752518585 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 94px;
+}
+
+.custom-shape-divider-bottom-1752518585 .shape-fill {
+    fill: #09061D;
+}
 
 .desktop-icon {
 
@@ -52,7 +109,7 @@ html, body {
 }
 
 .desktop-icon.huge{
-  transform: scale(2);
+  transform: scale(2.3);
 }
 
 .desktop-icon img:hover {
@@ -67,7 +124,7 @@ html, body {
   transform: scale(1.2) ;
 }
 .desktop-icon.huge:hover{
-  transform: scale(2.2);
+  transform: scale(2.5);
 }
 .desktop-icon span {
   display: block;
