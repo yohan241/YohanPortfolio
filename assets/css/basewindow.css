@@ -1,0 +1,155 @@
+:root{
+    --font-body: "Zen Kaku Gothic New", "sans-serif";
+    --font-mono: "Roboto Mono", "monospace";
+}
+
+
+.mainwindow {
+  background-color: white;
+    transform: scale(0.2);
+  opacity: 0;
+
+  position: absolute;
+  left: calc(50% - 200px);
+  top: calc(50% - 200px);
+  
+  box-shadow: 6px 6px 0 black;
+  border: 2px solid black;
+  width: 400px;
+  border-radius: 26px;
+  overflow: visible;    
+    padding-bottom: 10px;
+      display: block;
+      
+
+}
+
+.mainwindowheader{
+    padding: 10px 15px;
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
+  background-color: black  ;
+  border-radius: 25px 25px 0 0;
+}
+
+.mainwindowcontent{
+    padding: 20px;
+    margin-top: 1px;
+  text-align: center;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+}
+
+
+.mainwindow.closed{
+    pointer-events: none;
+    z-index: -10;
+}
+
+.mainwindow.active {
+  animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  pointer-events: auto;
+}
+
+.mainwindow.closing {
+  animation: scaleOut 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+  pointer-events: none;
+}
+
+
+.mainwindowheader h4 {
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+}
+
+.mainwindowcontent p {
+  font-size: 1em;
+  color: #333;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  line-height: 1;
+  padding: 10px;
+  margin: 0;
+    color: white;
+ transition: transform 0.2s ease;
+}
+.close-btn:hover {
+  animation: spinScale 0.4s ease-in-out;
+  transform: scale(1.2);
+}
+
+.close-btn:active {
+  transform: scale(1.35);
+  filter: brightness(1.2);
+}
+
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.55);
+    opacity: 0;
+  }
+}
+
+.mainwindow.dragging,
+.mainwindow.dragging * {
+  cursor: grabbing !important;
+}
+
+/* Wiggle + scale animation */
+@keyframes wiggle {
+  0%   { transform: scale(1.05) rotate(0deg);opacity: 1; }
+  25%  { transform: scale(1.06) rotate(1deg); opacity: 1;}
+  50%  { transform: scale(1.05) rotate(-1deg);opacity: 1; }
+  75%  { transform: scale(1.06) rotate(1deg);opacity: 1; }
+  100% { transform: scale(1.05) rotate(0deg); opacity: 1;}
+}
+
+.mainwindow.dragging {
+  animation: wiggle 0.3s ease-in-out infinite;
+  z-index: 10; /* stay on top while dragging */
+}
+@keyframes spinScale {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.2) rotate(360deg);
+  }
+}
