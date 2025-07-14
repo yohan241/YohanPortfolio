@@ -51,12 +51,23 @@ html, body {
   transition: transform 0.3s ease;
 }
 
+.desktop-icon.huge{
+  transform: scale(2);
+}
+
 .desktop-icon img:hover {
   transform: rotate(30deg);
 }
 
+.desktop-icon.normal{
+  transform: scale(1);
+}
+
 .desktop-icon:hover {
   transform: scale(1.2) ;
+}
+.desktop-icon.huge:hover{
+  transform: scale(2.2);
 }
 .desktop-icon span {
   display: block;

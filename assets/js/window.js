@@ -106,3 +106,17 @@ function loadWindowByName(windowName, windowId) {
     console.error("Error loading window:", err);
   });
 }
+
+
+
+function startUp(){
+  const bg= document.getElementById("bgcontainer");
+  const gsb= document.getElementById("getStartedButton");
+  bg.classList.remove("invisible");
+  gsb.classList.remove("huge");
+  gsb.classList.add("normal");
+  setTimeout(() => {
+     gsb.classList.remove("normal");
+  }, 300); 
+
+}

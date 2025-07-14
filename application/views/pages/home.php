@@ -1,4 +1,4 @@
-<div class="bgcontainer">
+<div class="bgcontainer invisible" id="bgcontainer">
     <div class="star"></div>
     <div class="meteor-1"></div>
     <div class="meteor-2"></div>
@@ -17,11 +17,11 @@
     <div class="meteor-15"></div>
 </div>
 
-
-<div class="desktop-icon" onclick="loadWindowByName('getstarted', 'main')">
-                <img src="<?= base_url(); ?>assets/images/email.png" alt="Contact Me">
-                <span>Contact Me</span>
+<div class="h-100 d-flex align-items-center justify-content-center">
+<div class="desktop-icon huge" onclick="loadWindowByName('getstarted', 'main'); startUp()" id="getStartedButton">
+                <img src="<?= base_url(); ?>assets/images/logo.png" alt="Contact Me">
+                <span>Get Started</span>
                 </div>
-
+</div>
 
 <div id="window-container"></div>
