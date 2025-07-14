@@ -1,20 +1,6 @@
 <div class="bgcontainer invisible" id="bgcontainer">
     <div class="star"></div>
-    <div class="meteor-1"></div>
-    <div class="meteor-2"></div>
-    <div class="meteor-3"></div>
-    <div class="meteor-4"></div>
-    <div class="meteor-5"></div>
-    <div class="meteor-6"></div>
-    <div class="meteor-7"></div>
-    <div class="meteor-8"></div>
-    <div class="meteor-9"></div>
-    <div class="meteor-10"></div>
-    <div class="meteor-11"></div>
-    <div class="meteor-12"></div>
-    <div class="meteor-13"></div>
-    <div class="meteor-14"></div>
-    <div class="meteor-15"></div>
+   <div class="meteors-container" id="meteors-container"></div>
 </div>
 <div class="custom-shape-divider-top-1752518320">
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -31,8 +17,9 @@
     </svg>
 </div>
 <div id="vignette-transition" class="vignette-mask"></div>
-    <div class="h-100 d-flex align-items-center justify-content-center">
-    <div class="desktop-icon huge" onclick="loadWindowByName('getstarted', 'main'); startUp()" id="getStartedButton">
+
+    <div class="container h-100 d-flex align-items-center justify-content-center">
+    <div class="desktop-icon huge" onclick="loadWindowByName('getstarted', 'main'); startUp(); loadWindowByName('home', 'homewindow')" id="getStartedButton">
                     <img src="<?= base_url(); ?>assets/images/logo.png" alt="Contact Me">
                     <span>Get Started</span>
                     </div>

@@ -4,9 +4,11 @@
         <button class="close-btn" onclick="hideWindow('homewindow')">[×]</button>
     
     </div>
-    <div class="mainwindowcontent">
-        <h1>welcome, i'm yohan</h1>
-        <h3>graphic designer, game and web developer</h3>
+    
+    <div class="container mainwindowcontent">
+        <h1>welcome, i'm<span class="text-primary"> yohan!</span> </h1>
+        <h4 class="text-muted">aspiring graphic designer, game and web developer</h4>
+        <div class="container text-black-50" style="border-style: dashed; padding: 2vh; border-radius: 2vh; border-color: lightgray; margin-top: 2vh" ><h6>all windows in this website are draggable by the header!!</h6></div>
     </div>
 </div>
 

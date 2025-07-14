@@ -128,3 +128,26 @@ function startUp(){
   }, 300); 
 
 }
+
+window.addEventListener("resize", () => {
+  const win = document.querySelector(".mainwindow");
+  if (window.innerWidth <= 768) {
+    win.classList.add("mobile");
+  } else {
+    win.classList.remove("mobile");
+  }
+});
+
+function closeWindow(win) {
+  win.classList.remove('active');
+  win.classList.add('closing');
+
+  // Optional: Cleanup after desktop animation ends
+  if (window.innerWidth > 768) {
+    setTimeout(() => {
+      win.classList.remove('closing');
+      win.style.zIndex = -10;
+      win.style.pointerEvents = 'none';
+    }, 300); // desktop animation duration
+  }
+}
