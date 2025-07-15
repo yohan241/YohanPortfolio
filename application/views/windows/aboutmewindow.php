@@ -1,6 +1,7 @@
 <div class="mainwindow closed card" id="aboutmewindow">
   <div class="mainwindowheader subfont" id="aboutmewindowheader">
     <h4>about me</h4>
+    <button class="minimize-btn" onclick="toggleMinimize(this)">[–]</button>
     <button class="close-btn" onclick="hideWindow('aboutmewindow')">[×]</button>
   </div>
 

@@ -1,6 +1,7 @@
 <div class="mainwindow closed" id= "contactswindow">
     <div class="mainwindowheader subfont " id= "contactswindowheader">
         <h4>contacts</h4>
+        <button class="minimize-btn" onclick="toggleMinimize(this)">[–]</button>
         <button class="close-btn" onclick="hideWindow('contactswindow')">[×]</button>
     
     </div>

@@ -25,4 +25,5 @@
     <audio id="entrySound" src="<?php echo base_url(); ?>assets/sounds/entry.mp3" preload="auto"></audio>
     <audio id="dropSound" src="<?php echo base_url(); ?>assets/sounds/drop.mp3" preload="auto"></audio>
     <audio id="grabSound" src="<?php echo base_url(); ?>assets/sounds/grab.mp3" preload="auto"></audio>
-    
+    <audio id="minSound" src="<?php echo base_url(); ?>assets/sounds/min.mp3" preload="auto"></audio>
+    <audio id="maxSound" src="<?php echo base_url(); ?>assets/sounds/maximize.mp3" preload="auto"></audio>

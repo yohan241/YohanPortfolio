@@ -9,7 +9,7 @@ function dragElement(elmnt) {
   target.onmousedown = dragMouseDown;
 
   function dragMouseDown(e) {
-    if (e.target.closest('.close-btn')) return;
+    if (e.target.closest('.close-btn') || e.target.closest('.minimize-btn')) return;
 
     e.preventDefault();
 
@@ -107,6 +107,25 @@ function loadWindowByName(windowName, windowId) {
   });
 }
 
+function toggleMinimize(button) {
+  const windowEl = button.closest('.mainwindow');
+  const contentEl = windowEl.querySelector('.mainwindowcontent');
+
+  if (windowEl.classList.contains('minimized')) {
+    windowEl.classList.remove('minimized');
+    windowEl.classList.add('unminimizing');
+    playSound('maxSound');
+    setTimeout(() => {
+      windowEl.classList.remove('unminimizing');
+    }, 300);
+  } else {
+    windowEl.classList.add('minimized');
+    playSound('minSound');
+  }
+
+  button.textContent = windowEl.classList.contains('minimized') ? '[+]' : '[–]';
+
+}
 
 
 function startUp(){
@@ -140,6 +159,7 @@ window.addEventListener("resize", () => {
 
 
 
+
 function closeWindow(win) {
   win.classList.remove('active');
   win.classList.add('closing');
@@ -162,4 +182,3 @@ function playSound(id) {
     sound.play();
   }
 }
-

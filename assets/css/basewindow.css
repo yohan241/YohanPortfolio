@@ -202,9 +202,91 @@
 }
 
 
+/* Minimize Button */
+.minimize-btn {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 10px;
+  color: white;
+  transition: transform 0.2s ease;
+}
+.minimize-btn:hover {
+  transform: scale(1.2);
+}
+.minimize-btn:active {
+  transform: scale(1.35);
+}
+
+/* Animation for minimize/maximize */
+@keyframes slideUpFade {
+  from {
+    opacity: 1;
+    max-height: 500px;
+  }
+  to {
+    opacity: 0;
+    max-height: 0;
+  }
+}
+
+@keyframes slideDownFade {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+.minimized .mainwindowcontent {
+  animation: slideUpFade 0.3s ease-out forwards;
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  pointer-events: none;
+}
+
+.unminimizing .mainwindowcontent {
+  animation: slideDownFade 0.3s ease-in forwards;
+  pointer-events: auto;
+}
+
+
 #aboutmewindow{
   width: 70vw;
   height: auto;
   max-width: 700px;
 }
 
+
+#workwindow{
+  width: 70vw;
+  height: auto;
+  max-width: 700px;
+}
+
+.tag {
+  background-color: #f0f0f0;
+  border-radius: 0.5rem;
+  padding: 0.4em 0.8em;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  cursor: default;
+  color: #333;
+}
+
+.tag:hover {
+  background-color: #0d6efd;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+img.img-fluid:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease-in-out;
+}

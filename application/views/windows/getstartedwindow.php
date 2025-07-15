@@ -4,6 +4,7 @@
     <div class="mainwindowheader subfont homeframeheader " onclick="toggleDrawer()" id="mainheader">
         <h4>shortcuts</h4>
 
+
     </div>
     <div class="mainwindowcontent homeframecontent">
         <div class="container-fluid vh-50 d-flex justify-content-center align-items-center">

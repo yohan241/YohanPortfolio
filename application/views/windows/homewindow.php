@@ -1,6 +1,7 @@
 <div class="mainwindow closed" id= "homewindow">
     <div class="mainwindowheader subfont " id= "homeheader">
         <h4>home</h4>
+        <button class="minimize-btn" onclick="toggleMinimize(this)">[–]</button>
         <button class="close-btn" onclick="hideWindow('homewindow')">[×]</button>
     
     </div>

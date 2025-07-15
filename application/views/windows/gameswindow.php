@@ -1,6 +1,7 @@
 <div class="mainwindow closed" id= "gameswindow">
     <div class="mainwindowheader subfont " id= "gameswindowheader">
         <h4>games i made</h4>
+        <button class="minimize-btn" onclick="toggleMinimize(this)">[–]</button>
         <button class="close-btn" onclick="hideWindow('gameswindow')">[×]</button>
     
     </div>
