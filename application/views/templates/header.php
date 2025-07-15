@@ -18,4 +18,11 @@
 
     </head>
     <body>
+
+    <audio id="openSound" src="<?php echo base_url(); ?>assets/sounds/openwindow.mp3" preload="auto"></audio>
+    <audio id="closeSound" src="<?php echo base_url(); ?>assets/sounds/closewindow.mp3" preload="auto"></audio>
+    <audio id="clickSound" src="<?php echo base_url(); ?>assets/sounds/blip.mp3" preload="auto"></audio>
+    <audio id="entrySound" src="<?php echo base_url(); ?>assets/sounds/entry.mp3" preload="auto"></audio>
+    <audio id="dropSound" src="<?php echo base_url(); ?>assets/sounds/drop.mp3" preload="auto"></audio>
+    <audio id="grabSound" src="<?php echo base_url(); ?>assets/sounds/grab.mp3" preload="auto"></audio>
     

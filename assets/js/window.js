@@ -21,7 +21,7 @@ function dragElement(elmnt) {
     pos4 = e.clientY;
 
     elmnt.classList.add("dragging");
-
+    playSound('grabSound');
     document.onmouseup = closeDragElement;
     document.onmousemove = elementDrag;
   }
@@ -41,7 +41,7 @@ function dragElement(elmnt) {
   function closeDragElement() {
     document.onmouseup = null;
     document.onmousemove = null;
-
+    playSound('dropSound');
     elmnt.classList.remove("dragging");
   }
 }
@@ -49,7 +49,7 @@ function dragElement(elmnt) {
 function showWindow(windowId) {
   const win = document.getElementById(windowId);
   if (!win) return;
-
+  playSound('openSound');
   win.classList.remove("closing", "closed");
   win.classList.add("active");
 
@@ -67,7 +67,7 @@ function showWindow(windowId) {
 function hideWindow(windowId) {
   const win = document.getElementById(windowId);
   if (!win) return;
-
+  playSound('closeSound');
   win.classList.remove("active");
   win.classList.add("closing");
 
@@ -116,7 +116,7 @@ function startUp(){
   gsb.classList.remove("huge");
   gsb.classList.add("normal");
   const vignette = document.getElementById("vignette-transition");
-
+  playSound('entrySound');
 
   vignette.classList.add("expanded");
 
@@ -138,6 +138,8 @@ window.addEventListener("resize", () => {
   }
 });
 
+
+
 function closeWindow(win) {
   win.classList.remove('active');
   win.classList.add('closing');
@@ -151,3 +153,13 @@ function closeWindow(win) {
     }, 300); // desktop animation duration
   }
 }
+
+
+function playSound(id) {
+  const sound = document.getElementById(id);
+  if (sound) {
+    sound.currentTime = 0; // rewind to start
+    sound.play();
+  }
+}
+

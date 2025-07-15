@@ -39,6 +39,9 @@
   text-align: center;
   border-bottom: 2px solid black;
   border-top: 2px solid black;
+  display: flex; /* Ensure it's a flex container */
+    flex-direction: column; /* Stack children vertically */
+
 }
 
 
@@ -197,3 +200,11 @@
     z-index: -10 !important;
   }
 }
+
+
+#aboutmewindow{
+  width: 70vw;
+  height: auto;
+  max-width: 700px;
+}
+
