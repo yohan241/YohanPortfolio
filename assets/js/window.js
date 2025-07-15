@@ -1,5 +1,21 @@
 let highestZ = 1000;
 const main = document.getElementById("main");
+let isMuted = false;
+
+
+
+function toggleMute(el) {
+  isMuted = !isMuted;
+  playSound('entrySound')
+  const muteIcon = document.getElementById("muteIconb");
+  if (muteIcon) {
+    muteIcon.src = isMuted 
+      ? "<?= base_url(); ?>assets/images/mute.png" 
+      : "<?= base_url(); ?>assets/images/speaker.png";
+  }
+
+
+}
 
 function dragElement(elmnt) {
   let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -131,9 +147,21 @@ function toggleMinimize(button) {
 function startUp(){
   const bg= document.getElementById("bgcontainer");
   const gsb= document.getElementById("getStartedButton");
+  const mute= document.getElementById("muteIcon");
+    const mutew= document.getElementById("muteIcon2");
+  const min= document.getElementById("minimizeButton");
   bg.classList.remove("invisible");
+  mute.classList.remove("invisible");
+  min.classList.remove("invisible");
+  mute.classList.remove("huge");
+  mute.classList.add("normal");
+  min.classList.remove("huge");
+  min.classList.add("normal");
   gsb.classList.remove("huge");
   gsb.classList.add("normal");
+  mutew.classList.remove("invisible");
+  mutew.classList.remove("huge");
+  mutew.classList.add("normal");
   const vignette = document.getElementById("vignette-transition");
   playSound('entrySound');
 
@@ -176,9 +204,41 @@ function closeWindow(win) {
 
 
 function playSound(id) {
+  if (isMuted) return;
   const sound = document.getElementById(id);
   if (sound) {
-    sound.currentTime = 0; // rewind to start
+    sound.currentTime = 0;
     sound.play();
   }
+}
+
+
+function copyEmail() {
+  const email = "johanczarpagba@gmail.com";
+  navigator.clipboard.writeText(email).then(() => {
+    const feedback = document.getElementById("copy-feedback");
+    feedback.style.display = "block";
+    setTimeout(() => {
+      feedback.style.display = "none";
+    }, 2000);
+  });
+}
+
+
+function minimizeAllWindows() {
+  const windows = document.querySelectorAll('.mainwindow');
+
+  windows.forEach(windowEl => {
+    // Check if it's open and not already minimized
+    const content = windowEl.querySelector('.mainwindowcontent');
+    const isVisible = windowEl.classList.contains('active');
+    const isMinimized = windowEl.classList.contains('minimized');
+
+    if (isVisible && content && !isMinimized) {
+      const minimizeBtn = windowEl.querySelector('.minimize-btn');
+      if (minimizeBtn) {
+        toggleMinimize(minimizeBtn); // Reuse your existing toggleMinimize function
+      }
+    }
+  });
 }

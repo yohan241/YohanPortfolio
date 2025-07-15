@@ -228,7 +228,7 @@
   to {
     opacity: 0;
     max-height: 0;
-  }
+}
 }
 
 @keyframes slideDownFade {
@@ -289,4 +289,80 @@
 img.img-fluid:hover {
   transform: scale(1.03);
   transition: transform 0.3s ease-in-out;
+}
+#gameswindow {
+  max-width: 528px;
+}
+
+.game-carousel {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 2rem;
+  padding: 2rem;
+  display: flex;
+}
+
+.game-carousel a {
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.game-slide {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* ensures square */
+  background-size: cover;
+  background-position: center;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.game-slide:hover {
+  transform: scale(1.03);
+}
+
+/* New game-info (no longer positioned absolutely) */
+.game-info {
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.game-info h5 {
+  margin: 0;
+  color: #0d6efd; /* Bootstrap primary color */
+}
+
+.game-info p {
+  margin: 0;
+  color: #6c757d; /* Bootstrap secondary text */
+  font-size: 0.9rem;
+}
+
+.contact-link:hover img {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.contact-link span {
+  font-weight: 500;
+}
+
+.top-icons .desktop-icon img {
+  width: 48px;
+  height: 48px;
+  filter: invert(1); /* Only these icons are inverted */
+  transition: transform 0.2s;
+
+}
+.top-icons{
+   z-index: 9999; 
+}
+
+.top-icons .desktop-icon img:hover {
+  transform: scale(1.1);
 }

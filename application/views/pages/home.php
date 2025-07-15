@@ -23,13 +23,32 @@
 
 <!-- Vignetter -->
 <div id="vignette-transition" class="vignette-mask"></div>
+    <div class="desktop-icons-container top-icons position-absolute top-0 start-0 p-3">
+  <<div class="desktop-icon huge invisible" onclick="minimizeAllWindows()" id="minimizeButton">
+                    <img style="filter: invert(1);" onmouseover="playSound('clickSound')"  src="<?= base_url(); ?>assets/images/minimize.png" alt="Contact Me">
+                    <span>Minimize All</span>
+                    </div>
+  <div class="desktop-icon huge invisible" onclick="toggleMute()" id="muteIcon">
+                    <img  style="filter: invert(1);" onmouseover="playSound('clickSound')"  src="<?= base_url(); ?>assets/images/volume.png" alt="muteIconb">
+                    <span>Mute Sound</span>
+                    </div>
+    <div class="desktop-icon huge invisible" onclick="loadWindowByName('getstarted', 'main')" id="muteIcon2">
+                    <img  style="filter: invert(1);" onmouseover="playSound('clickSound')"  src="<?= base_url(); ?>assets/images/logo.png" alt="muteIconb">
+                    <span>Show Shortcut</span>
+                    </div>
+</div>
 
 
     <div class="container h-100 d-flex align-items-center justify-content-center">
-    <div class="desktop-icon huge" onclick="loadWindowByName('getstarted', 'main'); startUp();" id="getStartedButton">
+    
+
+             
+
+                <div class="desktop-icon huge" onclick="loadWindowByName('getstarted', 'main'); startUp();" id="getStartedButton">
                     <img  onmouseover="playSound('clickSound')"  src="<?= base_url(); ?>assets/images/logo.png" alt="Contact Me">
                     <span>Get Started</span>
                     </div>
+
     </div>
 
 <div id="window-container"></div>
