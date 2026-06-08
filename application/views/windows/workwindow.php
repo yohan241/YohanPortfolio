@@ -1,8 +1,8 @@
 <div class="mainwindow closed card" id="workwindow">
   <div class="mainwindowheader subfont" id="workwindowheader">
     <h4>work</h4>
-    <button class="minimize-btn" onclick="toggleMinimize(this)">[–]</button>
-    <button class="close-btn" onclick="hideWindow('workwindow')">[×]</button>
+    <button class="minimize-btn" onclick="toggleMinimize(this)" type="button" aria-label="Minimize window">[-]</button>
+    <button class="close-btn" onclick="hideWindow('workwindow')" type="button" aria-label="Close window">[x]</button>
   </div>
 
   <div class="mainwindowcontent card-body d-flex flex-column text-start">

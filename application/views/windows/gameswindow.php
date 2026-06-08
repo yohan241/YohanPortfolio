@@ -1,8 +1,8 @@
 <div class="mainwindow closed card" id="gameswindow">
   <div class="mainwindowheader subfont" id="gameswindowheader">
     <h4>games</h4>
-    <button class="minimize-btn" onclick="toggleMinimize(this)">[–]</button>
-    <button class="close-btn" onclick="hideWindow('gameswindow')">[×]</button>
+    <button class="minimize-btn" onclick="toggleMinimize(this)" type="button" aria-label="Minimize window">[-]</button>
+    <button class="close-btn" onclick="hideWindow('gameswindow')" type="button" aria-label="Close window">[x]</button>
   </div>
 
 

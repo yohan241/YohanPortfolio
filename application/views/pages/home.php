@@ -23,19 +23,31 @@
 
 <!-- Vignetter -->
 <div id="vignette-transition" class="vignette-mask"></div>
-    <div class="desktop-icons-container top-icons position-absolute top-0 start-0 p-3">
-  <<div class="desktop-icon huge invisible" onclick="minimizeAllWindows()" id="minimizeButton">
-                    <img style="filter: invert(1);" onmouseover="playSound('clickSound')"  src="<?= base_url(); ?>assets/images/minimize.png" alt="Contact Me">
-                    <span>Minimize All</span>
-                    </div>
-  <div class="desktop-icon huge invisible" onclick="toggleMute()" id="muteIcon">
-                    <img  style="filter: invert(1);" onmouseover="playSound('clickSound')"  src="<?= base_url(); ?>assets/images/volume.png" alt="muteIconb">
-                    <span>Mute Sound</span>
-                    </div>
-    <div class="desktop-icon huge invisible" onclick="loadWindowByName('getstarted', 'main')" id="muteIcon2">
-                    <img  style="filter: invert(1);" onmouseover="playSound('clickSound')"  src="<?= base_url(); ?>assets/images/logo.png" alt="muteIconb">
-                    <span>Show Shortcut</span>
-                    </div>
+<div class="desktop-icons-container top-icons position-absolute top-0 start-0 p-3" aria-label="Desktop controls">
+    <button class="desktop-icon huge invisible" onclick="minimizeAllWindows()" id="minimizeButton" type="button">
+        <img onmouseover="playSound('clickSound')" src="<?= base_url(); ?>assets/images/minimize.png" alt="">
+        <span>Minimize All</span>
+    </button>
+    <button class="desktop-icon huge invisible" onclick="toggleMute()" id="muteIcon" type="button">
+        <img id="muteIconImage" onmouseover="playSound('clickSound')" src="<?= base_url(); ?>assets/images/volume.png" alt="">
+        <span>Mute Sound</span>
+    </button>
+    <button class="desktop-icon huge invisible" onclick="loadWindowByName('getstarted', 'main')" id="shortcutButton" type="button">
+        <img onmouseover="playSound('clickSound')" src="<?= base_url(); ?>assets/images/logo.png" alt="">
+        <span>Show Shortcut</span>
+    </button>
+</div>
+
+<div class="desktop-taskbar invisible" id="desktopTaskbar" aria-label="Taskbar">
+    <button class="taskbar-button taskbar-launcher" onclick="loadWindowByName('getstarted', 'main')" type="button">
+        <img src="<?= base_url(); ?>assets/images/logo.png" alt="">
+        <span>Shortcuts</span>
+    </button>
+    <div class="taskbar-windows" id="taskbarWindows" aria-label="Open windows"></div>
+    <button class="taskbar-button taskbar-sound" onclick="toggleMute()" id="taskbarMuteButton" type="button" aria-pressed="false">
+        <img id="taskbarMuteImage" src="<?= base_url(); ?>assets/images/volume.png" alt="">
+        <span>Sound</span>
+    </button>
 </div>
 
 
@@ -44,10 +56,10 @@
 
              
 
-                <div class="desktop-icon huge" onclick="loadWindowByName('getstarted', 'main'); startUp();" id="getStartedButton">
-                    <img  onmouseover="playSound('clickSound')"  src="<?= base_url(); ?>assets/images/logo.png" alt="Contact Me">
+                <button class="desktop-icon huge" onclick="loadWindowByName('getstarted', 'main'); startUp();" id="getStartedButton" type="button">
+                    <img  onmouseover="playSound('clickSound')"  src="<?= base_url(); ?>assets/images/logo.png" alt="">
                     <span>Get Started</span>
-                    </div>
+                    </button>
 
     </div>
 

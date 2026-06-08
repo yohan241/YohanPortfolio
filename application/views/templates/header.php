@@ -13,6 +13,11 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/meteor.css">
           <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/basewindow.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+        <script>
+            window.PORTFOLIO_CONFIG = {
+                baseUrl: "<?php echo rtrim(base_url(), '/'); ?>/"
+            };
+        </script>
     
  
 

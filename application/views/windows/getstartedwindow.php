@@ -9,7 +9,7 @@
     <div class="mainwindowcontent homeframecontent">
         <div class="container-fluid vh-50 d-flex justify-content-center align-items-center">
             <div class="desktop-grid d-flex flex-wrap justify-content-center gap-4">
-                <div class="desktop-icon" onmouseover="playSound('ound')"  onclick="loadWindowByName('home', 'homewindow')">
+                <div class="desktop-icon" onclick="loadWindowByName('home', 'homewindow')">
                 <img onmouseover="playSound('clickSound')" src="<?= base_url(); ?>assets/images/home.png" alt="Home">
                 <span>Home</span>
                 </div>

@@ -1,27 +1,26 @@
 <div class="mainwindow closed card" id="aboutmewindow">
   <div class="mainwindowheader subfont" id="aboutmewindowheader">
     <h4>about me</h4>
-    <button class="minimize-btn" onclick="toggleMinimize(this)">[–]</button>
-    <button class="close-btn" onclick="hideWindow('aboutmewindow')">[×]</button>
+    <button class="minimize-btn" onclick="toggleMinimize(this)" type="button" aria-label="Minimize window">[-]</button>
+    <button class="close-btn" onclick="hideWindow('aboutmewindow')" type="button" aria-label="Close window">[x]</button>
   </div>
 
   <div class="mainwindowcontent card-body d-flex flex-column text-start">
-    <div class="card-header sticky-top bg-white py-3">
-      <div class="d-flex align-items-center">
-        <img class="rounded-circle me-3" src="<?= base_url(); ?>assets/images/profile.jpg" alt="self-portrait"
-          style="width: 150px; height: 150px; object-fit: cover;">
-        <div style="padding-left: 10px">
+    <div class="card-header sticky-top bg-white py-3 about-profile">
+      <div class="d-flex align-items-center about-profile-row">
+        <img class="rounded-circle me-3 about-profile-photo" src="<?= base_url(); ?>assets/images/profile.jpg" alt="self-portrait">
+        <div class="about-profile-copy">
           <h1 class="card-title mb-0"><span class="text-primary fw-bold"> Johan Czar P. Pagba<span class="blockquote  fst-italic fw-lighter">(yohan)</span></span></h1>
-          <medium class="card-text text-muted mb-1">Aspiring game developer, graphic designer, web developer</medium>
-          <medium class="card-text text-muted">Currently pursuing a Bachelor's Degree on <br><a href="#"
+          <p class="card-text text-muted mb-1">Aspiring game developer, graphic designer, web developer</p>
+          <p class="card-text text-muted mb-0">Currently pursuing a Bachelor's Degree on <br><a href="#"
               class="text-decoration-none">Computer Science</a> at <a href="#"
-              class="text-decoration-none">Cavite State University - Imus Campus</a></medium>
+              class="text-decoration-none">Cavite State University - Imus Campus</a></p>
         </div>
       </div>
     </div>
 
     <!-- Scrollable content -->
-    <div class="p-3 overflow-auto" style="height: 30vh;">
+    <div class="p-3 overflow-auto about-scroll">
       <p>hi! i'm yohan, a comsci undergraduate with an interest in web and game development. i...</p>
       <ul>
         <li>create <a href="#" class="text-decoration-none">video games</a>,</li>
