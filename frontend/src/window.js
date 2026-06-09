@@ -111,8 +111,7 @@ export async function loadWindowByName(windowName, windowId){
 
 function getWindowHtml(windowName){
   if(windowHtmlByName[windowName]) return Promise.resolve(windowHtmlByName[windowName])
-  return fetch(`/windows/load_window/${windowName}`, { method:'GET', headers:{ 'X-Requested-With':'XMLHttpRequest' } })
-    .then(r => { if(!r.ok) throw new Error('failed to load window'); return r.text() })
+  return Promise.reject(new Error(`Unknown window: ${windowName}`))
 }
 
 export function toggleMinimize(button){
